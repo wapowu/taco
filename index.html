@@ -4,23 +4,34 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>wapowu</title>
+    <!-- Preload the GIF -->
+    <link rel="preload" href="frame-by-frame-dancing.gif" as="image" />
     <style>
-      html, body { height: 100%; margin: 0; background: #ffffff; }
-      body { display: grid; place-items: center; }
-      video { max-width: 90vw; max-height: 90vh; }
-      audio { display: none; } /* hides controls if you want autoplay background music */
+      html, body { height: 100%; margin: 0; background:#fff; }
+      body { display:grid; place-items:center; }
+      img  { max-width:90vw; max-height:90vh; height:auto; }
+      audio{ display:none; } /* no visible controls */
     </style>
   </head>
   <body>
-    <!-- The animation -->
-    <video autoplay loop muted playsinline>
-      <source src="frame-by-frame-dancing.gif" type="gif" />
-    </video>
+    <!-- GIF animation -->
+    <img src="frame-by-frame-dancing.gif" alt="frame by frame dancing" />
 
     <!-- Background music -->
-    <audio autoplay loop>
-      <source src="brain age express2.ogg" type="audio/ogg" />
-      Your browser does not support the audio element.
+    <audio id="bgm" loop preload="auto">
+      <!-- Prefer renaming file to: brain-age-express2.ogg -->
+      <source src="brain-age-express2.ogg" type="audio/ogg" />
     </audio>
+
+    <script>
+    (async () => {
+      const a = document.getElementById('bgm');
+      try { await a.play(); } catch {
+        const start = async () => { try { await a.play(); } catch {} };
+        document.addEventListener('click', start, { once:true });
+        document.addEventListener('touchstart', start, { once:true });
+      }
+    })();
+    </script>
   </body>
 </html>
