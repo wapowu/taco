@@ -1,37 +1,31 @@
 <!doctype html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>wapowu</title>
-    <!-- Preload the GIF -->
-    <link rel="preload" href="frame-by-frame-dancing.gif" as="image" />
-    <style>
-      html, body { height: 100%; margin: 0; background:#fff; }
-      body { display:grid; place-items:center; }
-      img  { max-width:90vw; max-height:90vh; height:auto; }
-      audio{ display:none; } /* no visible controls */
-    </style>
-  </head>
-  <body>
-    <!-- GIF animation -->
-    <img src="frame-by-frame-dancing.gif" alt="frame by frame dancing" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>wapowu</title>
+  <style>
+    html, body { height: 100%; margin: 0; background: #ffffff; }
+    body { display: grid; place-items: center; }
+    img { max-width: 90vw; max-height: 90vh; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <img id="gifPlayer" src="running.gif" alt="GIF player">
 
-    <!-- Background music -->
-    <audio id="bgm" loop preload="auto">
-      <!-- Prefer renaming file to: brain-age-express2.ogg -->
-      <source src="brain-age-express2.ogg" type="audio/ogg" />
-    </audio>
+  <script>
+    const gifs = ["running.gif", "walking.gif", "frame-by-frame-dancing.gif"]; // put your gif filenames here
+    const img = document.getElementById("gifPlayer");
+    let current = 0;
 
-    <script>
-    (async () => {
-      const a = document.getElementById('bgm');
-      try { await a.play(); } catch {
-        const start = async () => { try { await a.play(); } catch {} };
-        document.addEventListener('click', start, { once:true });
-        document.addEventListener('touchstart', start, { once:true });
-      }
-    })();
-    </script>
-  </body>
+    img.addEventListener("click", () => {
+      // advance to next gif
+      current = (current + 1) % gifs.length;
+      img.src = gifs[current] + "?t=" + new Date().getTime(); 
+      // timestamp busts the browser cache so the gif restarts
+    });
+  </script>
+</body>
 </html>
+
