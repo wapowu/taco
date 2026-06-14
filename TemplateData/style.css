@@ -74,7 +74,6 @@ html, body {
 }
 
 .webgl-content .footer .webgl-logo,
-.title,
 .fullscreen {
     height: 100%;
     display: inline-block;
@@ -88,9 +87,7 @@ html, body {
 }
 
 .webgl-content .footer .title {
-    margin-right: 10px;
-    float: right;
-    color: white;
+    display: none;
 }
 
 .webgl-content .footer .fullscreen {
