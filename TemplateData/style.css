@@ -1,4 +1,4 @@
-.webgl-content * {border: 0; margin: 0; padding: 0}
+.webgl-content * {border: 0; margin: 0; padding: 0;}
 
 html, body {
     background: #000000;
@@ -82,7 +82,7 @@ html, body {
 }
 
 .webgl-content .footer .webgl-logo {
-    background-image: url('webgl-logo.png');
+    background-image: url('wapowulogo.png');
     width: 204px;
     float: left;
 }
@@ -94,7 +94,7 @@ html, body {
 }
 
 .webgl-content .footer .fullscreen {
-    background-image: url('fullscreen.png');
+    background-image: url('wapowufullscreen.png');
     width: 38px;
     float: right;
 }
