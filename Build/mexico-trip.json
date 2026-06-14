@@ -1,9 +1,9 @@
 {
 "companyName": "DefaultCompany",
 "productName": "run",
-"dataUrl": "mexico-trip.data.unityweb",
-"wasmCodeUrl": "mexico-trip.wasm.code.unityweb",
-"wasmFrameworkUrl": "mexico-trip.wasm.framework.unityweb",
+"dataUrl": "build3.data.unityweb",
+"wasmCodeUrl": "build3.wasm.code.unityweb",
+"wasmFrameworkUrl": "build3.wasm.framework.unityweb",
 "TOTAL_MEMORY": 268435456,
 "graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
 "webglContextAttributes": {"preserveDrawingBuffer": false},
