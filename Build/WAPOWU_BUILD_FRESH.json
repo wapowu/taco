@@ -1,9 +1,9 @@
 {
 "companyName": "DefaultCompany",
 "productName": "run",
-"dataUrl": "build3.data.unityweb",
-"wasmCodeUrl": "build3.wasm.code.unityweb",
-"wasmFrameworkUrl": "build3.wasm.framework.unityweb",
+"dataUrl": "WAPOWU_BUILD_FRESH.data.unityweb",
+"wasmCodeUrl": "WAPOWU_BUILD_FRESH.wasm.code.unityweb",
+"wasmFrameworkUrl": "WAPOWU_BUILD_FRESH.wasm.framework.unityweb",
 "TOTAL_MEMORY": 268435456,
 "graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
 "webglContextAttributes": {"preserveDrawingBuffer": false},
